@@ -2,6 +2,8 @@
 
 import cgi
 import subprocess
+import webbrowser as wb
+
 
 print("content-type: text/html")
 print()
@@ -9,6 +11,8 @@ print()
 mydata = cgi.FieldStorage()
 
 var = mydata.getvalue("z")
+if("docker" in var):
+        wb.open("http://13.233.92.195/cgi-bin/Doc.py")
 
 
 output = subprocess.getoutput("sudo " + var)
